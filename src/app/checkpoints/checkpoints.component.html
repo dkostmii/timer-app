@@ -1,0 +1,8 @@
+<div class="checkpoints">
+  <div class="checkpoint" *ngFor="let c of checkpoints; let id=index">
+    {{ c.toString() }}
+    {{ getCheckPointCaption(c) }}
+    <button (click)="removeCheckpoint(id)">X</button>
+  </div>
+</div>
+<app-new-checkpoint (checkpointAdded)="newCheckpoint($event)"></app-new-checkpoint>

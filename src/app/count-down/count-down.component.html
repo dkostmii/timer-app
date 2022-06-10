@@ -1,0 +1,12 @@
+<div class="count-down">
+  <h4>Count down timer</h4>
+  <span id="days"> {{time.days | formatNumber }} </span> Day(s)
+  <span id="hours"> {{time.hours | formatNumber }} </span> Hours
+  <span id="minutes"> {{time.minutes | formatNumber }} </span> Minutes
+  <span id="seconds"> {{time.seconds | formatNumber }} </span> Seconds
+
+  <div class="controls">
+    <button (click)="toggleClickHandler()"> {{ toggleCaption }} </button>
+    <button (click)="resetClickHandler()">Reset</button> 
+  </div>
+</div>

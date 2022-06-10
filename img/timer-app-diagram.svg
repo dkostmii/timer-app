@@ -1,0 +1,258 @@
+<svg version="1.1" baseProfile="full" width="1200.0" height="1200.0" viewbox="0 0 1200 1200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events">
+	<desc >#background: #3085d8
+	#edges: rounded
+	#stroke: #fff
+	#padding: 20
+	#fontSize: 16
+	#fill: #3085d8
+	#.module: fill=#3085d8 stroke=#fff
+	#.component: fill=#dd0031
+	#ranker: longest-path
+	[util|
+	{ format, mod }]
+	[&lt;class&gt; TimeSpan|
+	static maxDays = 99
+	static hoursInADay = 24
+	static minutesInAHour = 60
+	static secondsInAMinute = 60
+	static millisecondsInASecond = 1000
+	days
+	hours
+	minutes
+	seconds
+	|
+	addDays()
+	addHours()
+	addMinutes()
+	addSeconds()
+	toString()
+	]
+	[TimeSpan] --&gt; [util]
+	
+	[&lt;module&gt; AppModule|
+	[&lt;service&gt; TimeService|providedIn: &apos;root&apos;]
+	[&lt;component&gt; AppComponent]
+	[&lt;component&gt; CountDownComponent] --&gt; [TimeService]
+	[&lt;component&gt; CheckpointsComponent] --&gt; [TimeService]
+	// [CheckpointsComponent] --+ [&lt;component&gt; NewCheckpointComponent]
+	[CheckpointsComponent] -o) checkpointAdded [&lt;component&gt; NewCheckpointComponent]
+	[&lt;component&gt; NewCheckpointComponent] --&gt; [TimeService]
+	
+	[TimeService] --&gt; [TimeSpan]
+	[CountDownComponent] --&gt; [TimeSpan]
+	[CheckpointsComponent] --&gt; [TimeSpan]
+	[NewCheckpointComponent] Emits --&gt; [TimeSpan]
+	
+	[AppComponent] --+ [CountDownComponent]
+	[AppComponent] --+ [CheckpointsComponent]
+	]
+	
+	</desc>
+	<g stroke-width="1.0" text-align="left" font="12pt Helvetica, Arial, sans-serif" font-size="16pt" font-family="Helvetica" font-weight="bold" font-style="normal">
+		<g transform="translate(0.5, 0.5)" font-family="Helvetica" font-size="16pt" font-weight="bold" font-style="normal" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round" stroke="#fff">
+			<g stroke="transparent" fill="#3085d8">
+				<rect x="0.0" y="0.0" height="1200.0" width="1200.0" stroke="none"></rect>
+			</g>
+			<g transform="translate(20, 20)" fill="#fff">
+				<g transform="translate(20, 20)" fill="#fff" font-family="Helvetica" font-size="16pt" font-weight="normal" font-style="normal">
+					<g stroke-dasharray="6 6">
+						<path d="M194.0 420.0 L194 440 L194 723.3333333333334 L194.0 723.3 " fill="none"></path>
+					</g>
+					<path d="M188.7 716.7 L194.0 723.3 L199.3 716.7 L194.0 730.0 Z"></path>
+					<g data-name="TimeSpan">
+						<g fill="#3085d8" stroke="#fff" data-name="TimeSpan">
+							<rect x="0.0" y="0.0" height="420.0" width="388.0" data-name="TimeSpan"></rect>
+							<path d="M0.0 60.0 L388.0 60.0" fill="none" data-name="TimeSpan"></path>
+							<path d="M0.0 280.0 L388.0 280.0" fill="none" data-name="TimeSpan"></path>
+						</g>
+						<g transform="translate(0, 0)" font-family="Helvetica" font-size="16pt" font-weight="bold" font-style="normal" data-name="TimeSpan">
+							<g transform="translate(20, 20)" fill="#fff" text-align="center" data-name="TimeSpan">
+								<text x="174.0" y="18.0" stroke="none" text-anchor="middle" data-name="TimeSpan">TimeSpan</text>
+								
+							</g>
+						</g>
+						<g transform="translate(0, 60)" font-family="Helvetica" font-size="16pt" font-weight="normal" font-style="normal" data-name="TimeSpan">
+							<g transform="translate(20, 20)" fill="#fff" text-align="left" data-name="TimeSpan">
+								<text x="0.0" y="18.0" stroke="none" data-name="TimeSpan">static maxDays = 99</text>
+								<text x="0.0" y="38.0" stroke="none" data-name="TimeSpan">static hoursInADay = 24</text>
+								<text x="0.0" y="58.0" stroke="none" data-name="TimeSpan">static minutesInAHour = 60</text>
+								<text x="0.0" y="78.0" stroke="none" data-name="TimeSpan">static secondsInAMinute = 60</text>
+								<text x="0.0" y="98.0" stroke="none" data-name="TimeSpan">static millisecondsInASecond = 1000</text>
+								<text x="0.0" y="118.0" stroke="none" data-name="TimeSpan">days</text>
+								<text x="0.0" y="138.0" stroke="none" data-name="TimeSpan">hours</text>
+								<text x="0.0" y="158.0" stroke="none" data-name="TimeSpan">minutes</text>
+								<text x="0.0" y="178.0" stroke="none" data-name="TimeSpan">seconds</text>
+								
+							</g>
+						</g>
+						<g transform="translate(0, 280)" font-family="Helvetica" font-size="16pt" font-weight="normal" font-style="normal" data-name="TimeSpan">
+							<g transform="translate(20, 20)" fill="#fff" text-align="left" data-name="TimeSpan">
+								<text x="0.0" y="18.0" stroke="none" data-name="TimeSpan">addDays()</text>
+								<text x="0.0" y="38.0" stroke="none" data-name="TimeSpan">addHours()</text>
+								<text x="0.0" y="58.0" stroke="none" data-name="TimeSpan">addMinutes()</text>
+								<text x="0.0" y="78.0" stroke="none" data-name="TimeSpan">addSeconds()</text>
+								<text x="0.0" y="98.0" stroke="none" data-name="TimeSpan">toString()</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="util">
+						<g fill="#3085d8" stroke="#fff" data-name="util">
+							<rect x="104.0" y="730.0" height="120.0" width="180.0" data-name="util"></rect>
+							<path d="M104.0 790.0 L284.0 790.0" fill="none" data-name="util"></path>
+						</g>
+						<g transform="translate(104, 730)" font-family="Helvetica" font-size="16pt" font-weight="bold" font-style="normal" data-name="util">
+							<g transform="translate(20, 20)" fill="#fff" text-align="center" data-name="util">
+								<text x="70.0" y="18.0" stroke="none" text-anchor="middle" data-name="util">util</text>
+								
+							</g>
+						</g>
+						<g transform="translate(104, 790)" font-family="Helvetica" font-size="16pt" font-weight="normal" font-style="normal" data-name="util">
+							<g transform="translate(20, 20)" fill="#fff" text-align="left" data-name="util">
+								<text x="0.0" y="18.0" stroke="none" data-name="util">{ format, mod }</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="AppModule">
+						<g fill="#3085d8" stroke="#fff" data-name="AppModule">
+							<rect x="324.0" y="460.0" height="660.0" width="796.0" data-name="AppModule"></rect>
+							<path d="M324.0 520.0 L1120.0 520.0" fill="none" data-name="AppModule"></path>
+						</g>
+						<g transform="translate(324, 460)" font-family="Helvetica" font-size="16pt" font-weight="normal" font-style="normal" data-name="AppModule">
+							<g transform="translate(20, 20)" fill="#fff" text-align="center" data-name="AppModule">
+								<text x="378.0" y="18.0" stroke="none" text-anchor="middle" data-name="AppModule">AppModule</text>
+								
+							</g>
+						</g>
+						<g transform="translate(324, 520)" font-family="Helvetica" font-size="16pt" font-weight="normal" font-style="normal" data-name="AppModule">
+							<g transform="translate(20, 20)" fill="#fff" data-name="AppModule">
+								<g transform="translate(20, 20)" fill="#fff" font-family="Helvetica" font-size="16pt" font-weight="normal" font-style="normal" data-name="AppModule">
+									<g stroke-dasharray="6 6" data-name="AppModule">
+										<path d="M127.0 260.0 L119 280 L215.80591398459742 318.529717008795 L215.8 318.5 " fill="none" data-name="AppModule"></path>
+									</g>
+									<path d="M207.6 321.0 L215.8 318.5 L211.6 311.1 L222.0 321.0 Z" data-name="AppModule"></path>
+									<g stroke-dasharray="6 6" data-name="AppModule">
+										<path d="M397.6 160.0 L318 180 L318 230 L318 230 L318 280 L318 280 L318.3333853922653 293.33541569061254 L318.3 293.3 " fill="none" data-name="AppModule"></path>
+									</g>
+									<path d="M312.8 286.8 L318.3 293.3 L323.5 286.5 L318.5 300.0 Z" data-name="AppModule"></path>
+									<text x="318.0" y="180.0" stroke="none" data-name="AppModule">checkpointAdded</text>
+									<path d="M517.0 160.0 L517 180 L517 185.33333333333334 L517.0 185.3 " fill="none" data-name="AppModule"></path>
+									<path d="M525.0 185.3 L524.7 187.6 L523.7 189.7 L522.2 191.4 L520.3 192.6 L518.1 193.3 L515.9 193.3 L513.7 192.6 L511.8 191.4 L510.3 189.7 L509.3 187.6 L509.0 185.3" fill="none" data-name="AppModule"></path>
+									<path d="M517.0 193.3 L517.0 200.0" fill="none" data-name="AppModule"></path>
+									<ellipse cx="517.0" cy="185.3" rx="4.0" ry="4.0" data-name="AppModule"></ellipse>
+									<g stroke-dasharray="6 6" data-name="AppModule">
+										<path d="M469.3 260.0 L437.5 280 L413.6356616505948 296.24806015278654 L413.6 296.2 " fill="none" data-name="AppModule"></path>
+									</g>
+									<path d="M416.1 288.1 L413.6 296.2 L422.1 296.9 L408.1 300.0 Z" data-name="AppModule"></path>
+									<g stroke-dasharray="6 6" data-name="AppModule">
+										<path d="M320.0 420.0 L320 440 L353.8431508646917 457.0066084747194 L353.8 457.0 " fill="none" data-name="AppModule"></path>
+									</g>
+									<path d="M345.5 458.8 L353.8 457.0 L350.3 449.2 L359.8 460.0 Z" data-name="AppModule"></path>
+									<g stroke-dasharray="6 6" data-name="AppModule">
+										<path d="M151.3 260.0 L159.5 280 L159.5 360 L159.5 360 L159.5 440 L159.5 440 L341.95329035346236 475.0871712218197 L342.0 475.1 " fill="none" data-name="AppModule"></path>
+									</g>
+									<path d="M334.4 479.1 L342.0 475.1 L336.4 468.6 L348.5 476.3 Z" data-name="AppModule"></path>
+									<g stroke-dasharray="6 6" data-name="AppModule">
+										<path d="M636.4 160.0 L716 180 L716 230 L716 230 L716 280 L716 280 L716 360 L716 360 L716 440 L716 440 L497.07385014775247 476.9184063831783 L497.1 476.9 " fill="none" data-name="AppModule"></path>
+									</g>
+									<path d="M502.8 470.6 L497.1 476.9 L504.5 481.1 L490.5 478.0 Z" data-name="AppModule"></path>
+									<text x="584.7" y="296.0" stroke="none" data-name="AppModule">Emits</text>
+									<g stroke-dasharray="6 6" data-name="AppModule">
+										<path d="M564.7 260.0 L596.5 280 L596.5 360 L596.5 360 L596.5 440 L596.5 440 L496.9156021947191 468.1311858207008 L496.9 468.1 " fill="none" data-name="AppModule"></path>
+									</g>
+									<path d="M501.9 461.2 L496.9 468.1 L504.8 471.5 L490.5 469.9 Z" data-name="AppModule"></path>
+									<g stroke-dasharray="6 6" data-name="AppModule">
+										<path d="M228.0 56.5 L139 80 L139 130 L139 130 L139 180 L139 180 L139 181.33333333333334 L139.0 181.3 " fill="none" data-name="AppModule"></path>
+									</g>
+									<g fill="#fff" data-name="AppModule">
+										<path d="M133.7 190.7 L139.0 181.3 L144.3 190.7 L139.0 200.0 Z" data-name="AppModule"></path>
+									</g>
+									<g stroke-dasharray="6 6" data-name="AppModule">
+										<path d="M428.0 56.5 L517 80 L517 81.33333333333334 L517.0 81.3 " fill="none" data-name="AppModule"></path>
+									</g>
+									<g fill="#fff" data-name="AppModule">
+										<path d="M511.7 90.7 L517.0 81.3 L522.3 90.7 L517.0 100.0 Z" data-name="AppModule"></path>
+									</g>
+									<g data-name="TimeService">
+										<g fill="#3085d8" stroke="#fff" data-name="TimeService">
+											<rect x="222.0" y="300.0" height="120.0" width="196.0" data-name="TimeService"></rect>
+											<path d="M222.0 360.0 L418.0 360.0" fill="none" data-name="TimeService"></path>
+										</g>
+										<g transform="translate(222, 300)" font-family="Helvetica" font-size="16pt" font-weight="bold" font-style="normal" data-name="TimeService">
+											<g transform="translate(20, 20)" fill="#fff" text-align="center" data-name="TimeService">
+												<text x="78.0" y="18.0" stroke="none" text-anchor="middle" data-name="TimeService">TimeService</text>
+												
+											</g>
+										</g>
+										<g transform="translate(222, 360)" font-family="Helvetica" font-size="16pt" font-weight="normal" font-style="normal" data-name="TimeService">
+											<g transform="translate(20, 20)" fill="#fff" text-align="left" data-name="TimeService">
+												<text x="0.0" y="18.0" stroke="none" data-name="TimeService">providedIn: &apos;root&apos;</text>
+												
+											</g>
+										</g>
+									</g>
+									<g data-name="AppComponent">
+										<g fill="#dd0031" stroke="#fff" data-name="AppComponent">
+											<rect x="228.0" y="0.0" height="60.0" width="200.0" data-name="AppComponent"></rect>
+										</g>
+										<g transform="translate(228, 0)" font-family="Helvetica" font-size="16pt" font-weight="normal" font-style="normal" data-name="AppComponent">
+											<g transform="translate(20, 20)" fill="#fff" text-align="center" data-name="AppComponent">
+												<text x="80.0" y="18.0" stroke="none" text-anchor="middle" data-name="AppComponent">AppComponent</text>
+												
+											</g>
+										</g>
+									</g>
+									<g data-name="CountDownComponent">
+										<g fill="#dd0031" stroke="#fff" data-name="CountDownComponent">
+											<rect x="0.0" y="200.0" height="60.0" width="278.0" data-name="CountDownComponent"></rect>
+										</g>
+										<g transform="translate(0, 200)" font-family="Helvetica" font-size="16pt" font-weight="normal" font-style="normal" data-name="CountDownComponent">
+											<g transform="translate(20, 20)" fill="#fff" text-align="center" data-name="CountDownComponent">
+												<text x="119.0" y="18.0" stroke="none" text-anchor="middle" data-name="CountDownComponent">CountDownComponent</text>
+												
+											</g>
+										</g>
+									</g>
+									<g data-name="CheckpointsComponent">
+										<g fill="#dd0031" stroke="#fff" data-name="CheckpointsComponent">
+											<rect x="374.0" y="100.0" height="60.0" width="286.0" data-name="CheckpointsComponent"></rect>
+										</g>
+										<g transform="translate(374, 100)" font-family="Helvetica" font-size="16pt" font-weight="normal" font-style="normal" data-name="CheckpointsComponent">
+											<g transform="translate(20, 20)" fill="#fff" text-align="center" data-name="CheckpointsComponent">
+												<text x="123.0" y="18.0" stroke="none" text-anchor="middle" data-name="CheckpointsComponent">CheckpointsComponent</text>
+												
+											</g>
+										</g>
+									</g>
+									<g data-name="NewCheckpointComponent">
+										<g fill="#dd0031" stroke="#fff" data-name="NewCheckpointComponent">
+											<rect x="358.0" y="200.0" height="60.0" width="318.0" data-name="NewCheckpointComponent"></rect>
+										</g>
+										<g transform="translate(358, 200)" font-family="Helvetica" font-size="16pt" font-weight="normal" font-style="normal" data-name="NewCheckpointComponent">
+											<g transform="translate(20, 20)" fill="#fff" text-align="center" data-name="NewCheckpointComponent">
+												<text x="139.0" y="18.0" stroke="none" text-anchor="middle" data-name="NewCheckpointComponent">NewCheckpointComponent</text>
+												
+											</g>
+										</g>
+									</g>
+									<g data-name="TimeSpan">
+										<g fill="#3085d8" stroke="#fff" data-name="TimeSpan">
+											<rect x="349.0" y="460.0" height="60.0" width="142.0" data-name="TimeSpan"></rect>
+										</g>
+										<g transform="translate(349, 460)" font-family="Helvetica" font-size="16pt" font-weight="bold" font-style="normal" data-name="TimeSpan">
+											<g transform="translate(20, 20)" fill="#fff" text-align="center" data-name="TimeSpan">
+												<text x="51.0" y="18.0" stroke="none" text-anchor="middle" data-name="TimeSpan">TimeSpan</text>
+												
+											</g>
+										</g>
+									</g>
+								</g>
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+</svg>
